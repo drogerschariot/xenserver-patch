@@ -5,11 +5,15 @@
 #
 
 import sys
-import subprocess
 import os
-import shutil
 
 patches = [
+  {"name": "XS62ESP1", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/8707/XS62ESP1.zip"},
+  {"name": "XS62ESP1002", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/8737/XS62ESP1002.zip"},
+  {"name": "XS62ESP1003", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/9031/XS62ESP1003.zip"},
+  {"name": "XS62ESP1005", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/9058/XS62ESP1005.zip"},
+  {"name": "XS62ESP1008", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/9491/XS62ESP1008.zip"},
+  {"name": "XS62ESP1009", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/9617/XS62ESP1009.zip"},
   {"name": "XS62E001", "url": "http://support.citrix.com/servlet/KbServlet/download/34977-102-705578/XS62E001.zip"},
   {"name": "XS62E002", "url": "http://support.citrix.com/servlet/KbServlet/download/35140-102-705624/XS62E002.zip"},
   {"name": "XS62E004", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/8165/XS62E004.zip"},
@@ -18,14 +22,9 @@ patches = [
   {"name": "XS62E010", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/8458/XS62E010.zip"},
   {"name": "XS62E011", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/8693/XS62E011.zip"},
   {"name": "XS62E012", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/8694/XS62E012.zip"},
-  {"name": "XS62ESP1", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/8707/XS62ESP1.zip"},
   {"name": "XS62E014", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/8736/XS62E014.zip"},
-  {"name": "XS62ESP1002", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/8737/XS62ESP1002.zip"},
-  {"name": "XS62ESP1003", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/9031/XS62ESP1003.zip"},
-  {"name": "XS62ESP1005", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/9058/XS62ESP1005.zip"},
   {"name": "XS62E015", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/9279/XS62E015.zip"},
-  {"name": "XS62ESP1008", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/9491/XS62ESP1008.zip"},
-  {"name": "XS62ESP1009", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/9617/XS62ESP1009.zip"},
+
 ]
 
 
