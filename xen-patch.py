@@ -7,6 +7,14 @@
 import sys
 import os
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+
 patches = [
   {"name": "XS62ESP1", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/8707/XS62ESP1.zip"},
   {"name": "XS62ESP1002", "url": "http://downloadns.citrix.com.edgesuite.net/akdlm/8737/XS62ESP1002.zip"},
@@ -35,7 +43,12 @@ def main(argv):
     print("Select which patch to apply:")
     count = 0
     while count < len(patches):
-      print(str(count) + ": " + patches[count]['name'])
+      exists = ''
+      exists =  os.popen("xe patch-list name-label="+patches[count]['name']).read().rstrip()
+      if exists != '':
+        print(bcolors.OKGREEN + " " + str(count) + ": " + patches[count]['name'] + " " + bcolors.ENDC)
+      else:
+        print(bcolors.FAIL + " " + str(count) + ": " + patches[count]['name'] + " " + bcolors.ENDC)
       count = count + 1
 
     select = int(raw_input('Enter your input: '))
